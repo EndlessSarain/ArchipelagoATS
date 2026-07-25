@@ -14,6 +14,7 @@ Complete deliveries to unlock new states, receive items from other players, and 
 | **Windows** | 10 or 11 (64-bit) |
 | **American Truck Simulator** | 1.55 or newer |
 | **Archipelago** | any recent release — [archipelago.gg](https://archipelago.gg) |
+| **scs-sdk-plugin** | v1.12.1 — [github.com/RenCloud/scs-sdk-plugin](https://github.com/RenCloud/scs-sdk-plugin/releases) |
 | **ATS DLCs** | only the state DLCs you want to include in your randomizer |
 
 ---
@@ -72,7 +73,23 @@ A YAML generator is also available in the client app (menu → YAML Generator).
 
 ---
 
-## 3. Install the ATS Archipelago client
+## 3. Install the scs-sdk-plugin in ATS
+
+The client reads game telemetry through **[scs-sdk-plugin](https://github.com/RenCloud/scs-sdk-plugin)** — a small DLL that ATS loads on startup and writes telemetry data to shared memory.
+
+1. Download the latest `scs-telemetry.dll` from [github.com/RenCloud/scs-sdk-plugin/releases](https://github.com/RenCloud/scs-sdk-plugin/releases).
+2. Place it in your ATS plugins folder:
+   ```
+   C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator\plugins\
+   ```
+   (create the `plugins/` folder if it doesn't exist)
+3. Launch ATS once to confirm it loads — no error dialog means it worked.
+
+> Without this plugin the ATS Archipelago client will start but **deliveries will never be detected**.
+
+---
+
+## 4. Install the ATS Archipelago client
 
 Download **`ATS Archipelago Setup 0.1.0.exe`** from the [Releases](../../releases) page and run it.
 
@@ -82,7 +99,7 @@ The installer will:
 
 ---
 
-## 4. Configure the client
+## 5. Configure the client
 
 Launch **ATS Archipelago** from your desktop or Start Menu.
 
@@ -98,7 +115,7 @@ Click **Connect** — the status dot turns green when connected.
 
 ---
 
-## 5. Launch ATS and start playing
+## 6. Launch ATS and start playing
 
 1. Open **American Truck Simulator**.
 2. Load your save (or start a new game).
@@ -169,7 +186,7 @@ Only states whose DLCs you **own and enable** in your YAML will be included in y
 |---|---|
 | Status dot stays red after filling AP settings | Check the server URL format (`ws://` not `wss://` for local servers). Verify your slot name matches exactly. |
 | Delivery not registering as a check | The destination city's state must be unlocked (you need its `StateAccess` item first). |
-| `ATS: disconnected` shown in header | ATS is not running or the telemetry SDK is not available. Make sure ATS is open and loaded into a save. |
+| `ATS: disconnected` shown in header | ATS is not running or `scs-sdk-plugin` is not installed. Check that `scs-telemetry.dll` is in your ATS `plugins/` folder. |
 | App opens but no window appears | Check `%APPDATA%\ats-archipelago-client\` — delete `config.json` to reset to defaults. |
 | Client crashes on startup | Run as Administrator once to allow the telemetry SDK to initialize. |
 
