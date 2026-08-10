@@ -161,7 +161,7 @@ The client reads game telemetry through **[scs-sdk-plugin](https://github.com/Re
    C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator\bin\win_x64\plugins\
    ```
    (create the `plugins/` folder if it doesn't exist)
-3. Launch ATS once to confirm it loads — no error dialog means it worked.
+3. Launch ATS once to confirm it loads — you should see a notification in-game saying something like **"Request for SDK detected"**.
 
 > Without this plugin the ATS Archipelago client will start but **deliveries will never be detected**.
 
