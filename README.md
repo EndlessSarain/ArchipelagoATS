@@ -22,18 +22,34 @@ Complete deliveries, hit distance milestones, and haul cargo to earn checks — 
 ## 1. Install the APWorld
 
 1. Download the latest `ats.apworld` from the [Releases](../../releases) page.
-2. Place it in your Archipelago `worlds/` folder:
-   ```
-   C:\ProgramData\Archipelago\lib\worlds\    (standard install)
-   ```
-   or drag it onto the Archipelago Launcher.
-3. Restart the Archipelago Launcher — **ATS** will appear in the game list.
+2. Install it using one of these methods:
+   - **Double-click** `ats.apworld` — Archipelago will install it automatically.
+   - **Drag it** onto the Archipelago Launcher.
+   - **Manually copy** it to your Archipelago `worlds/` folder:
+     ```
+     C:\ProgramData\Archipelago\lib\worlds\    (standard install)
+     ```
+3. Restart the Archipelago Launcher.
 
 ---
 
-## 2. Generate your game
+## 2. Install the ATS Archipelago client
 
-Open the Archipelago Launcher → **Generate** and configure your YAML:
+Download **`ATS Archipelago Setup 0.2.0.exe`** from the [Releases](../../releases) page and run it.
+
+The installer will:
+- Create a Start Menu shortcut and a Desktop shortcut.
+- Store your settings in `%APPDATA%\ats-archipelago-client\config.json`.
+
+---
+
+## 3. Generate your game
+
+Configure your YAML in the **ATS Archipelago client** → **YAML** tab. Once done, place the `.yaml` file in:
+```
+C:\ProgramData\Archipelago\lib\Players\
+```
+Then generate your game from the Archipelago Launcher → **Generate**:
 
 ```yaml
 name: YourName
@@ -131,29 +147,19 @@ American Truck Simulator:
 
 ---
 
-## 3. Install the scs-sdk-plugin in ATS
+## 4. Install the scs-sdk-plugin in ATS
 
 The client reads game telemetry through **[scs-sdk-plugin](https://github.com/RenCloud/scs-sdk-plugin)** — a small DLL that ATS loads on startup and writes telemetry data to shared memory.
 
 1. Download the latest `scs-telemetry.dll` from [github.com/RenCloud/scs-sdk-plugin/releases](https://github.com/RenCloud/scs-sdk-plugin/releases).
 2. Place it in your ATS plugins folder:
    ```
-   C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator\plugins\
+   C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator\bin\win_x64\plugins\
    ```
    (create the `plugins/` folder if it doesn't exist)
 3. Launch ATS once to confirm it loads — no error dialog means it worked.
 
 > Without this plugin the ATS Archipelago client will start but **deliveries will never be detected**.
-
----
-
-## 4. Install the ATS Archipelago client
-
-Download **`ATS Archipelago Setup 0.2.0.exe`** from the [Releases](../../releases) page and run it.
-
-The installer will:
-- Create a Start Menu shortcut and a Desktop shortcut.
-- Store your settings in `%APPDATA%\ats-archipelago-client\config.json`.
 
 ---
 
@@ -165,7 +171,7 @@ In the **Settings** panel (gear icon in the top-right), fill in:
 
 | Field | Value |
 |---|---|
-| **AP Server URL** | `ws://localhost:38281` (local) or your host's address |
+| **AP Server URL** | `ws://localhost:38281` (local) · `wss://archipelago.gg:11111` (hosted on archipelago.gg) |
 | **Slot name** | your player name in the Archipelago session |
 | **Password** | leave empty if the room has no password |
 
