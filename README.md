@@ -138,12 +138,17 @@ American Truck Simulator:
 
   # Gate individual city access behind City Access items (honour system)
   randomize_city_access: false
-
-  # ── Other ───────────────────────────────────────────────────────────────────
-
-  # Death Link: a heavy crash sends a death signal to all Death Link players
-  death_link: false
 ```
+
+Once your YAML is ready and placed in `C:\ProgramData\Archipelago\lib\Players\`, generate the game:
+
+1. Run **`ArchipelagoGenerate.exe`** — this creates a `AP_XXXXXXXXX.zip` in:
+   ```
+   C:\ProgramData\Archipelago\output\
+   ```
+2. With that zip, choose one of:
+   - **Online** — upload it on [archipelago.gg/uploads](https://archipelago.gg/uploads) to get a hosted room.
+   - **Local** — launch **`ArchipelagoServer.exe`** (or use the **Host** button in **`ArchipelagoLauncher.exe`**) to run the server on your own machine.
 
 ---
 
@@ -151,7 +156,7 @@ American Truck Simulator:
 
 The client reads game telemetry through **[scs-sdk-plugin](https://github.com/RenCloud/scs-sdk-plugin)** — a small DLL that ATS loads on startup and writes telemetry data to shared memory.
 
-1. Download the latest `scs-telemetry.dll` from [github.com/RenCloud/scs-sdk-plugin/releases](https://github.com/RenCloud/scs-sdk-plugin/releases).
+1. Download the latest `scs-telemetry.dll` from [github.com/RenCloud/scs-sdk-plugin/releases](https://github.com/RenCloud/scs-sdk-plugin/releases) — take the **Win64** version for a 64-bit Windows.
 2. Place it in your ATS plugins folder:
    ```
    C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator\bin\win_x64\plugins\
