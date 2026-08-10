@@ -49,7 +49,6 @@ Configure your YAML in the **ATS Archipelago client** → **YAML** tab. Once don
 ```
 C:\ProgramData\Archipelago\lib\Players\
 ```
-Then generate your game from the Archipelago Launcher → **Generate**:
 
 ```yaml
 name: YourName
